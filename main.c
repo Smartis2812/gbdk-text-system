@@ -10,11 +10,11 @@
 
 #define MAX_STRING_SIZE 17
 
-const UINT8 dia_first_row_start_adr = 0xd0;
-const UINT8 dia_second_row_start_adr =  0xe0;
-const UINT8 blk_tile_adr = 0xf0;
-const UINT8 arr_tile_adr = 0xf1;
-const UINT8 char_offset = 32;
+const uint8_t dia_first_row_start_adr = 0xd0;
+const uint8_t dia_second_row_start_adr =  0xe0;
+const uint8_t blk_tile_adr = 0xf0;
+const uint8_t arr_tile_adr = 0xf1;
+const uint8_t char_offset = 32;
 
 /* An example pangram version A with 3 lines */
 const unsigned char pangram_a[][MAX_STRING_SIZE] = 
@@ -35,7 +35,7 @@ const unsigned char pangram_b[][MAX_STRING_SIZE] =
 
 // --- Indexer ---
 
-UINT8 i, ii, ip, ib;
+uint8_t i, ii, ip, ib;
 
 // --- Global Variables ---
 
@@ -46,12 +46,12 @@ UBYTE key_down;
 UBYTE dia_wnd_visible;
 
 /* Amount of missing lines to display */
-UINT8 open_dia_lines;
+uint8_t open_dia_lines;
 
 // --- Functions ---
 
 /* Simple replacement for wait() function */
-void performant_delay(UINT8 numloops)
+void performant_delay(uint8_t numloops)
 {
     for (ip = 0; i != numloops; i++)
     {
@@ -65,7 +65,7 @@ void performant_delay(UINT8 numloops)
     - last_lin -> The last line which was displayed
     --> return value -> The amount of lines which have to be displayed
 */
-UINT8 show_dia_wnd(unsigned char text_lines[][MAX_STRING_SIZE], UINT8 amount_lin, UINT8 last_lin)
+uint8_t show_dia_wnd(unsigned char text_lines[][MAX_STRING_SIZE], uint8_t amount_lin, uint8_t last_lin)
 {
     dia_wnd_visible = 1;
 
